@@ -6,9 +6,9 @@ Compiles css files with node-sass. The sass compilers run in the sigh process po
 
 ## Example
 
-`npm install --save node-sass` then add this to your `sigh.js`:
+`npm install --save node-sass sigh-sass` then add this to your `sigh.js`:
 ```javascript
-var sass, glob, babel, write
+var sass, glob, write
 
 module.exports = function(pipelines) {
   pipelines['build:source'] = [
