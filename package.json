@@ -1,6 +1,6 @@
 {
   "name": "sigh-sass",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "sigh-plugin for compiling scss files with node-sass.",
   "scripts": {
     "test": "sigh"
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "lodash": "^3.7.0",
-    "sigh-core": "^0.11.0"
+    "sigh-core": "^0.11.4"
   },
   "peerDependencies": {
     "sigh": ">=0.12.6 <0.14.0",
