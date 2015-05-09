@@ -15,15 +15,23 @@ function sassCompiler(opts) {
     // one of the very few times you actually want to use a synchronous call
     var result = sass.renderSync(_.assign({
       data: event.data,
-      outFile: event.projectPath,
+      outFile: 'tmp.css', // needed for correct paths in map.sources
+      file: event.path,
       sourceMap: true,
       sourceMapEmbed: false,
       includePaths: includePaths.concat([ path.dirname(event.path) ])
     }, opts))
 
+    var map = JSON.parse(String(result.map))
+    map.file = event.path
+    map.sourcesContent = map.sources.map(source => {
+      // if it is null the `write` plugin will try to resolve it later
+      return source === event.path ?  event.data : null
+    })
+
     return {
       data: String(result.css),
-      map: String(result.map)
+      map: JSON.stringify(map)
     }
   }
 }
@@ -34,11 +42,7 @@ function adaptEvent(compiler) {
     return result.then(result => {
       event.data = result.data
 
-      var map = JSON.parse(result.map)
-      map.sources = [ event.path ]
-      map.sourcesContent = [ event.data ]
-      event.applySourceMap(map)
-
+      event.applySourceMap(JSON.parse(result.map))
       event.changeFileSuffix('css')
       return event
     })

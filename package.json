@@ -1,6 +1,6 @@
 {
   "name": "sigh-sass",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "sigh-plugin for compiling scss files with node-sass.",
   "scripts": {
     "test": "sigh"
