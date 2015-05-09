@@ -34,7 +34,6 @@
     "babel": "^5.2.9",
     "bluebird": "^2.9.24",
     "chai": "^2.3.0",
-    "jasmine-core": "^2.3.0",
     "mocha": "^2.2.4",
     "node-sass": "^3.0.0",
     "process-pool": "^0.3.1",
