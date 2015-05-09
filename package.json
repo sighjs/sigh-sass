@@ -1,0 +1,48 @@
+{
+  "name": "sigh-sass",
+  "version": "0.0.1",
+  "description": "sigh-plugin for compiling scss files with node-sass.",
+  "scripts": {
+    "test": "sigh"
+  },
+  "main": "lib/index",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sighjs/sigh-sass.git"
+  },
+  "keywords": [
+    "build",
+    "assets",
+    "pipeline",
+    "sigh-plugin",
+    "sass"
+  ],
+  "author": "James Pike <github@chilon.net>",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/sighjs/sigh-sass/issues"
+  },
+  "dependencies": {
+    "lodash": "^3.7.0",
+    "sigh-core": "^0.11.0"
+  },
+  "peerDependencies": {
+    "sigh": ">=0.12.6 <0.14.0",
+    "node-sass": "3"
+  },
+  "devDependencies": {
+    "babel": "^5.2.9",
+    "bluebird": "^2.9.24",
+    "chai": "^2.3.0",
+    "jasmine-core": "^2.3.0",
+    "mocha": "^2.2.4",
+    "node-sass": "^3.0.0",
+    "process-pool": "^0.3.1",
+    "sigh": "^0.12.7",
+    "sigh-babel": "^0.11.0",
+    "sigh-cli": "^0.2.2",
+    "sigh-mocha": "^0.1.0",
+    "source-map": "^0.4.2",
+    "source-map-support": "^0.2.10"
+  }
+}
