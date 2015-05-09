@@ -1,4 +1,3 @@
-import { Bacon } from 'sigh-core'
 import { mapEvents } from 'sigh-core/lib/stream'
 import _ from 'lodash'
 
