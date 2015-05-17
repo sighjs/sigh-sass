@@ -37,6 +37,13 @@ function sassCompiler(opts) {
 
 function adaptEvent(compiler) {
   return event => {
+    if (event.type !== 'add' && event.type !== 'change')
+      return event
+
+    var { fileType } = event
+    if (fileType !== 'scss' && fileType !== 'sass')
+      return event
+
     var result = compiler(_.pick(event, 'type', 'data', 'path', 'projectPath'))
     return result.then(result => {
       event.data = result.data
@@ -48,9 +55,11 @@ function adaptEvent(compiler) {
   }
 }
 
+var pooledProc
+
 export default function(op, opts = {}) {
-  return mapEvents(
-    op.stream,
-    adaptEvent(op.procPool.prepare(sassCompiler, opts, { module }))
-  )
+  if (! pooledProc)
+    pooledProc = op.procPool.prepare(sassCompiler, opts, { module })
+
+  return mapEvents(op.stream, adaptEvent(pooledProc))
 }
