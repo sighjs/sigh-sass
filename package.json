@@ -1,6 +1,6 @@
 {
   "name": "sigh-sass",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "sigh-plugin for compiling scss files with node-sass.",
   "scripts": {
     "test": "sigh"
@@ -18,7 +18,7 @@
     "sass"
   ],
   "author": "James Pike <github@chilon.net>",
-  "license": "GPL",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sighjs/sigh-sass/issues"
   },
